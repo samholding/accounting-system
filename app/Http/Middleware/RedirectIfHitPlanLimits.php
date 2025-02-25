@@ -33,6 +33,8 @@ class RedirectIfHitPlanLimits
             return $next($request);
         }
 
+        return $next($request);
+        
         if (! $this->getUserLimitOfPlan()->action_status) {
             return redirect()->route('users.index');
         }

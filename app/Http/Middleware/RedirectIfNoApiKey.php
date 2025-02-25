@@ -15,6 +15,8 @@ class RedirectIfNoApiKey
      */
     public function handle($request, Closure $next)
     {
+        return $next($request);
+        
         if ($request->get('alias') == 'core') {
             return $next($request);
         }
